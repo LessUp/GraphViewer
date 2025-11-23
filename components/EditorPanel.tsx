@@ -56,6 +56,14 @@ export function EditorPanel(props: EditorPanelProps) {
         <h2 className="text-lg font-semibold text-slate-900">配置与编辑</h2>
         <p className="text-sm text-slate-500">选择渲染引擎与输出格式，编辑你的图形脚本。</p>
       </div>
+      <div className="flex flex-wrap items-center gap-2 rounded-xl bg-slate-100/70 px-3 py-2 text-xs text-slate-600">
+        <span className="inline-flex items-center gap-1 rounded-full bg-white px-2 py-0.5 font-semibold text-slate-700 shadow-sm">
+          快捷提示
+        </span>
+        <span className="whitespace-nowrap">Ctrl / Cmd + Enter 可立即渲染。</span>
+        <span className="whitespace-nowrap">开启实时预览后会在 0.8s 内自动刷新。</span>
+        <span className="whitespace-nowrap">在预览区域按住左键可拖动，按住 Ctrl 滚轮可缩放。</span>
+      </div>
       <div className="grid gap-4 md:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
           渲染引擎
@@ -120,6 +128,15 @@ export function EditorPanel(props: EditorPanelProps) {
           />
           实时预览（防抖）
         </label>
+        <span
+          className="text-xs text-slate-500"
+          role="status"
+          aria-live="polite"
+        >
+          {livePreviewEnabled
+            ? '已开启实时预览，停止输入约 0.8 秒后自动渲染。'
+            : '实时预览已关闭，使用渲染按钮或快捷键执行。'}
+        </span>
         {canUseLocalRender && (
           <span className="flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
             <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500" />

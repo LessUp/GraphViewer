@@ -92,6 +92,9 @@ export function PreviewPanel(props: PreviewPanelProps) {
           <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
             当前格式：{FORMAT_LABELS[format]}
           </span>
+          <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[0.7rem] text-amber-700">
+            滚轮 + Ctrl 缩放 · 按住左键拖动
+          </span>
         </div>
       </div>
       <div className="relative flex min-h-[22rem] items-center justify-center overflow-hidden rounded-2xl border border-dashed border-slate-200 bg-white">
